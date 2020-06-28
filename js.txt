@@ -1,0 +1,43 @@
+function validation()
+{
+    var error=document.getElementById('error').style.padding='10px'
+    var name=document.getElementById('name').value
+    if(name.length<5)
+    {
+       document.getElementById('error').innerHTML='please enter valid name';
+       return false;
+    }
+
+    var subject=document.getElementById('subject').value;
+
+    if(subject.length<5)
+    {
+       document.getElementById('error').innerHTML='please enter correct subject';
+       return false;
+    }
+  var phone=document.getElementById('phone').value;
+
+  if(isNaN(phone) || phone.length !== 10)
+  {
+    document.getElementById('error').innerHTML='please enter valid phone number';
+    return false;
+  }
+
+  var email=document.getElementById('email').value;
+
+  if(email.indexOf('@')===-1 || (email.length<6))
+  {
+    document.getElementById('error').innerHTML='please enter valid Email Id';
+    return false;
+  }
+  var textarea=document.getElementById('message').value;
+  if(textarea.length<140)
+  {
+    document.getElementById('error').innerHTML='please enter more than 140 characters';
+    return false;
+  }
+  alert('form submitted successfully')
+  //return true so that the form get submiited
+
+  return true;
+}
